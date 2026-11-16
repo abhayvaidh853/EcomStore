@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - EcomStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+    <header class="checkout-header">
+        <a href="index.html" class="logo" aria-label="EcomStore home">
+            <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
+                <defs><linearGradient id="bagGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#3730a3"/></linearGradient></defs>
+                <rect x="2" y="2" width="40" height="40" rx="13" fill="url(#bagGradient)"/>
+                <path d="M13 17h18l1.5 17h-21L13 17Z" fill="white"/>
+                <path d="M17 18v-3a5 5 0 0 1 10 0v3" fill="none" stroke="white" stroke-linecap="round" stroke-width="2.6"/>
+                <path d="M22 21.5v8m-3-3 3 3 3-3" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <circle cx="34" cy="10" r="5" fill="#f59e0b"/>
+            </svg>
+            <span>Ecom<span class="logo-accent">Store</span></span>
+        </a>
+        <a id="accountNav" class="account-link" href="account.html">Login / Sign up</a>
+        <a class="back-to-store" href="index.html">Continue shopping</a>
+    </header>
+
+    <main class="checkout-main">
+        <div class="checkout-intro">
+            <p class="eyebrow">Almost yours</p>
+            <h1>Checkout</h1>
+            <p>Enter your delivery details and choose how you’d like to pay.</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-layout">
+            <div class="checkout-sections">
+                <section class="checkout-card">
+                    <h2>Delivery address</h2>
+                    <div class="checkout-fields">
+                        <label>Full name<input name="name" autocomplete="name" required></label>
+                        <label>Phone number<input name="phone" type="tel" autocomplete="tel" pattern="[0-9+() -]{8,16}" required></label>
+                        <label class="field-wide">Street address<input name="street" autocomplete="street-address" required></label>
+                        <label>City<input name="city" autocomplete="address-level2" required></label>
+                        <label>State<input name="state" autocomplete="address-level1" required></label>
+                        <label>PIN code<input name="pin" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{6}" required></label>
+                    </div>
+                </section>
+
+                <section class="checkout-card">
+                    <h2>Payment method</h2>
+                    <div class="payment-options">
+                        <label class="payment-option"><input type="radio" name="payment" value="upi" checked> UPI</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="card"> Credit or debit card</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="cod"> Cash on delivery</label>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="checkout-card order-card">
+                <h2>Your order</h2>
+                <div id="checkoutItems" class="checkout-items"></div>
+                <div class="coupon-box">
+                    <label for="couponInput">Have a coupon?</label>
+                    <div class="coupon-controls">
+                        <input id="couponInput" type="text" placeholder="Enter code" autocomplete="off">
+                        <button id="applyCoupon" type="button" class="secondary-button">Apply</button>
+                    </div>
+                    <p id="couponMessage" class="form-message" aria-live="polite">Codes: WELCOME10, SAVE200, FIRST15.</p>
+                </div>
+                <div class="order-totals">
+                    <p><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></p>
+                    <p><span>Discount</span><strong id="checkoutDiscount">−₹0</strong></p>
+                    <p class="grand-total"><span>Total</span><strong id="checkoutTotal">₹0</strong></p>
+                </div>
+                <button id="payButton" class="checkout-button pay-button" type="submit">Proceed to Payment</button>
+                <p id="checkoutMessage" class="form-message checkout-message" aria-live="polite"></p>
+            </aside>
+        </form>
+    </main>
+
+    <footer class="footer"><p>© 2026 EcomStore</p></footer>
+    <script src="checkout.js"></script>
+    <script src="account-nav.js"></script>
+</body>
+</html>

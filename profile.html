@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - EcomStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+    <header class="checkout-header">
+        <a href="index.html" class="logo" aria-label="EcomStore home">
+            <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
+                <defs><linearGradient id="bagGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#3730a3"/></linearGradient></defs>
+                <rect x="2" y="2" width="40" height="40" rx="13" fill="url(#bagGradient)"/>
+                <path d="M13 17h18l1.5 17h-21L13 17Z" fill="white"/><path d="M17 18v-3a5 5 0 0 1 10 0v3" fill="none" stroke="white" stroke-linecap="round" stroke-width="2.6"/>
+                <path d="M22 21.5v8m-3-3 3 3 3-3" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="34" cy="10" r="5" fill="#f59e0b"/>
+            </svg>
+            <span>Ecom<span class="logo-accent">Store</span></span>
+        </a>
+        <a id="accountNav" class="account-link" href="profile.html">My profile</a>
+        <a class="back-to-store" href="index.html">Continue shopping</a>
+    </header>
+
+    <main class="checkout-main profile-main">
+        <div class="checkout-intro">
+            <p class="eyebrow">Your EcomStore</p>
+            <h1>My profile</h1>
+            <p>Update your contact details and see your recent orders.</p>
+        </div>
+        <div class="profile-layout">
+            <section class="checkout-card">
+                <h2>Personal details</h2>
+                <form id="profileForm" class="account-form">
+                    <label>Full name<input name="name" autocomplete="name" required maxlength="80"></label>
+                    <label>Email address<input name="email" type="email" readonly></label>
+                    <label>Phone number<input name="phone" type="tel" autocomplete="tel" pattern="[0-9+() -]{8,16}"></label>
+                    <button class="checkout-button" type="submit">Save profile</button>
+                </form>
+                <p id="profileMessage" class="form-message" aria-live="polite"></p>
+                <button id="logoutButton" class="secondary-button logout-button" type="button">Log out</button>
+            </section>
+            <section class="checkout-card">
+                <h2>Recent orders</h2>
+                <div id="profileOrders" class="profile-orders"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer"><p>© 2026 EcomStore</p></footer>
+    <script src="profile.js"></script>
+    <script src="account-nav.js"></script>
+</body>
+</html>

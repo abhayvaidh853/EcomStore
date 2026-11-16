@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - EcomStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+    <header class="checkout-header">
+        <a href="index.html" class="logo" aria-label="EcomStore home">
+            <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
+                <defs><linearGradient id="bagGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#3730a3"/></linearGradient></defs>
+                <rect x="2" y="2" width="40" height="40" rx="13" fill="url(#bagGradient)"/>
+                <path d="M13 17h18l1.5 17h-21L13 17Z" fill="white"/>
+                <path d="M17 18v-3a5 5 0 0 1 10 0v3" fill="none" stroke="white" stroke-linecap="round" stroke-width="2.6"/>
+                <path d="M22 21.5v8m-3-3 3 3 3-3" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <circle cx="34" cy="10" r="5" fill="#f59e0b"/>
+            </svg>
+            <span>Ecom<span class="logo-accent">Store</span></span>
+        </a>
+        <a id="accountNav" class="account-link" href="account.html">Login / Sign up</a>
+        <a class="back-to-store" href="checkout.html">Back to checkout</a>
+    </header>
+
+    <main class="checkout-main">
+        <div class="checkout-intro">
+            <p class="eyebrow">Secure checkout</p>
+            <h1>Payment</h1>
+            <p>Review your order and choose a payment method.</p>
+        </div>
+
+        <div id="paymentContent" class="checkout-layout payment-layout">
+            <div class="checkout-sections">
+                <section class="checkout-card">
+                    <h2>Choose payment method</h2>
+                    <div id="paymentOptions" class="payment-options">
+                        <label class="payment-option"><input type="radio" name="payment" value="upi"> UPI</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="card"> Credit or debit card</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="cod"> Cash on delivery</label>
+                    </div>
+                    <p class="demo-note">Demo checkout: no real payment will be collected.</p>
+                </section>
+                <section class="checkout-card">
+                    <h2>Delivering to</h2>
+                    <div id="paymentAddress" class="payment-address"></div>
+                    <a href="checkout.html" class="edit-checkout-link">Edit address or coupon</a>
+                </section>
+            </div>
+
+            <aside class="checkout-card order-card">
+                <h2>Order summary</h2>
+                <div id="paymentItems" class="checkout-items"></div>
+                <div class="order-totals">
+                    <p><span>Subtotal</span><strong id="paymentSubtotal">₹0</strong></p>
+                    <p><span id="paymentDiscountLabel">Discount</span><strong id="paymentDiscount">−₹0</strong></p>
+                    <p class="grand-total"><span>Total</span><strong id="paymentTotal">₹0</strong></p>
+                </div>
+                <button id="confirmOrder" class="checkout-button pay-button" type="button">Confirm demo order</button>
+                <p id="paymentMessage" class="form-message checkout-message" aria-live="polite"></p>
+            </aside>
+        </div>
+
+        <section id="orderConfirmation" class="checkout-card order-confirmation" hidden>
+            <div class="confirmation-icon" aria-hidden="true">✓</div>
+            <p class="eyebrow">Order confirmed</p>
+            <h2>Thanks for shopping with us!</h2>
+            <p id="confirmationText"></p>
+            <a href="index.html" class="checkout-button confirmation-link">Continue shopping</a>
+        </section>
+    </main>
+
+    <footer class="footer"><p>© 2026 EcomStore</p></footer>
+    <script src="payment.js"></script>
+    <script src="account-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Sign Up - EcomStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page account-page">
+    <header class="checkout-header">
+        <a href="index.html" class="logo" aria-label="EcomStore home">
+            <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
+                <defs><linearGradient id="bagGradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#3730a3"/></linearGradient></defs>
+                <rect x="2" y="2" width="40" height="40" rx="13" fill="url(#bagGradient)"/>
+                <path d="M13 17h18l1.5 17h-21L13 17Z" fill="white"/><path d="M17 18v-3a5 5 0 0 1 10 0v3" fill="none" stroke="white" stroke-linecap="round" stroke-width="2.6"/>
+                <path d="M22 21.5v8m-3-3 3 3 3-3" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="34" cy="10" r="5" fill="#f59e0b"/>
+            </svg>
+            <span>Ecom<span class="logo-accent">Store</span></span>
+        </a>
+        <a class="back-to-store" href="index.html">Back to store</a>
+    </header>
+
+    <main class="account-main">
+        <section class="checkout-card account-card">
+            <div class="account-heading">
+                <p class="eyebrow">Welcome to EcomStore</p>
+                <h1>Your account</h1>
+                <p>Sign in or create an account to manage your profile and orders.</p>
+            </div>
+            <div class="account-tabs" role="tablist" aria-label="Account access">
+                <button type="button" class="account-tab active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel">Login</button>
+                <button type="button" class="account-tab" id="signupTab" role="tab" aria-selected="false" aria-controls="signupPanel">Sign up</button>
+            </div>
+
+            <form id="loginPanel" class="account-form" role="tabpanel" aria-labelledby="loginTab">
+                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+                <button class="checkout-button" type="submit">Login</button>
+            </form>
+
+            <form id="signupPanel" class="account-form" role="tabpanel" aria-labelledby="signupTab" hidden>
+                <label>Full name<input name="name" autocomplete="name" required maxlength="80"></label>
+                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+                <p class="account-help">Use at least 8 characters. Your demo account is saved only in this browser.</p>
+                <button class="checkout-button" type="submit">Create account</button>
+            </form>
+            <p id="accountMessage" class="form-message account-message" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer class="footer"><p>© 2026 EcomStore</p></footer>
+    <script src="account.js"></script>
+</body>
+</html>
